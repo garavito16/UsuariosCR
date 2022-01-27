@@ -25,3 +25,22 @@ class Usuario:
         id = connectToMySQL("users_schema").query_db(query,usuario)
         print(id)
         return id
+
+    @classmethod
+    def mostrarUsuario(self,usuario):
+        query = "SELECT * FROM usuarios WHERE id=%(id)s;"
+        result = connectToMySQL("users_schema").query_db(query,usuario)
+        return result[0]
+
+    @classmethod
+    def editarUsuario(self,usuario):
+        query = "UPDATE usuarios set nombre = %(nombre)s, apellido = %(apellido)s, correo_electronico = %(correo_electronico)s, updated_at = now() WHERE id=%(id)s;"
+        result = connectToMySQL("users_schema").query_db(query,usuario)
+        return result
+
+    @classmethod
+    def eliminarUsuario(self,usuario):
+        query = "DELETE FROM usuarios WHERE id=%(id)s;"
+        result = connectToMySQL("users_schema").query_db(query,usuario)
+        return result
+        

@@ -16,20 +16,24 @@
             <thead>
                 <tr>
                     <td>Id</td>
-                    <td>Nombre</td>
-                    <td>Apellido</td>
+                    <td>Nombres completos</td>                    
                     <td>Correo Electronico</td>
                     <td>Creado</td>
+                    <td>Operaciones</td>
                 </tr>
             </thead>
             <tbody>
                 {% for user in lista %}
                     <tr>
                         <td>{{user.id}}</td>
-                        <td>{{user.nombre}}</td>
-                        <td>{{user.apellido}}</td>
+                        <td>{{user.apellido}} {{user.nombre}}</td>
                         <td>{{user.correo_electronico}}</td>
                         <td>{{user.created_at}}</td>
+                        <td>
+                            <a href="/ver_usuario/{{user.id}}">Mostrar</a>
+                            <a href="/editar_usuario/{{user.id}}">Editar</a>
+                            <a href="/eliminar_usuario/{{user.id}}">Eliminar</a>
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>

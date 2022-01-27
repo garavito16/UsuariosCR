@@ -11,3 +11,14 @@
 .container > * {
     margin-top: 1.5em;
 }
+
+.mostrar,.inicio {
+    text-align: right;
+    display: block;
+}
+
+.box {
+    border: 2px solid black;
+    padding: 1.5em;
+    margin: 1.0em 0;
+}
