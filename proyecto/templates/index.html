@@ -11,37 +11,39 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Lista de Usuarios</h1>
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <td>Id</td>
-                    <td>Nombres completos</td>                    
-                    <td>Correo Electronico</td>
-                    <td>Creado</td>
-                    <td>Operaciones</td>
-                </tr>
-            </thead>
-            <tbody>
-                {% for user in lista %}
+        <div class="col-md-8 offset-md-2">
+            <h1 class="title">Lista de Usuarios</h1>
+            <table class="table table-hover">
+                <thead>
                     <tr>
-                        <td>{{user.id}}</td>
-                        <td>{{user.apellido}} {{user.nombre}}</td>
-                        <td>{{user.correo_electronico}}</td>
-                        <td>{{user.created_at}}</td>
-                        <td>
-                            <a href="/ver_usuario/{{user.id}}">Mostrar</a>
-                            <a href="/editar_usuario/{{user.id}}">Editar</a>
-                            <a href="/eliminar_usuario/{{user.id}}">Eliminar</a>
-                        </td>
+                        <td>Id</td>
+                        <td>Nombres completos</td>                    
+                        <td>Correo Electronico</td>
+                        <td>Creado</td>
+                        <td>Operaciones</td>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <div>
-            <form method="GET" action="/create_user">
-                <button type="submit" class="btn btn-primary">Agregar Usuario</button>
-            </form>
+                </thead>
+                <tbody>
+                    {% for user in lista %}
+                        <tr>
+                            <td>{{user.id}}</td>
+                            <td>{{user.apellido}} {{user.nombre}}</td>
+                            <td>{{user.correo_electronico}}</td>
+                            <td>{{user.created_at}}</td>
+                            <td>
+                                <a href="/ver_usuario/{{user.id}}">Mostrar</a>
+                                <a href="/editar_usuario/{{user.id}}">Editar</a>
+                                <a href="/eliminar_usuario/{{user.id}}">Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div>
+                <form method="GET" action="/create_user">
+                    <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+                </form>
+            </div>
         </div>
     </div>
 </body>
