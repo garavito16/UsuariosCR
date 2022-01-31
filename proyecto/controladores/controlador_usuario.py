@@ -49,7 +49,6 @@ def editar_usuario(id):
         "correo_electronico" : request.form["correo_electronico"]
     }
     result = Usuario.editarUsuario(usuario)
-    print(result)
     return redirect('/ver_usuario/'+str(id))
 
 @app.route('/eliminar_usuario/<id>')
